@@ -1,35 +1,38 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import "./App.css";
+import Hero from "./components/Hero.tsx";
+import Playground from "./components/common/Playground.tsx";
+import Features from "./components/Features.tsx";
+import { AboutAuthor } from "./components/AboutAuthor.tsx";
+import CallToAction from "./components/common/CallToAction.tsx";
+import Footer from "./components/Footer.tsx";
+import Header from "./components/Header.tsx";
+import ScrollToTop from "./components/common/ScrollToTop.tsx";
+import Toast from "./components/common/Toast.tsx";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div className="min-h-screen bg-gradient-to-b from-gray-900 to-gray-800 text-white">
+      <Header />
+      <main className="mx-auto px-4 py-12">
+        {/*hero*/}
+        <Hero />
+        {/*playground*/}
+        <Playground />
+
+        {/*features*/}
+        <Features />
+
+        {/*  about author */}
+        <AboutAuthor />
+        {/*  Call to action*/}
+        <CallToAction />
+      </main>
+      {/* footer*/}
+      <Footer />
+      <ScrollToTop />
+      <Toast />
+    </div>
+  );
 }
 
-export default App
+export default App;
